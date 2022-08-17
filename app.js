@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("This is an API please make appropriate api calls tot get data ");
 });
 app.get("/attendance/:roll", async (req, res) => {
-  const roll = req.params.roll; 
+  const roll = req.params.roll;
   const user = await Student.findOne({ rollNumber: roll })
     .populate("subjects.sid", "title -_id")
   console.log(user["subjects"])
@@ -45,6 +45,7 @@ app.post("/markAttendance", async (req, res) => {
   }
   res.send("Marked Attendance");
 });
-app.listen(3000, () => {
+const port = process.env.PORT
+app.listen(port, () => {
   console.log("Listening on port 3000");
 });
