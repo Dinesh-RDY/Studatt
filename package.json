@@ -1,0 +1,22 @@
+{
+  "name": "websitepackage",
+  "version": "1.0.0",
+  "description": "This is the backend for the open cv attendance project that will be developed",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "attendance-",
+    "automation"
+  ],
+  "author": "DineshReddy Aryan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.2",
+    "nodemon": "^2.0.19"
+  }
+}
