@@ -30,6 +30,9 @@ app.post("/markAttendance", async (req, res) => {
   let updateDate = new Date(user.updateTime)
   let presentDate = new Date();
   console.log(updateDate)
+  console.log(presentDate)
+  console.log(updateDate.getHours());
+  console.log(presentDate.getHours());
   if (updateDate.getHours() - presentDate.getHours() == 0 && presentDate.getDay() == updateDate.getDay())
     return res.status(405).send("Failure. Don't proxy attendance.")
   try {
