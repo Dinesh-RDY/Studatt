@@ -12,10 +12,6 @@ const student = new schema({
         unique: true,
         index: true
     },
-    // dept: {
-    //     type: String,
-    //     required: true,
-    // },
     subjects: [{
         sid: {
             type: mongoose.Schema.Types.ObjectId,

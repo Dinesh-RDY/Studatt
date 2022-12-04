@@ -2,15 +2,16 @@ const { default: mongoose } = require("mongoose");
 const Student = require("../models/students");
 const Subject = require("../models/subjects");
 require("dotenv").config()
-const dbUrl = process.env.dbUrl || "mongodb://localhost:27017/attendance"
+const dbUrl = "mongodb://localhost:27017/attendance"
 mongoose.connect(dbUrl).then(() => {
+  console.log(dbUrl)
   console.log("connection Established");
 }).catch(() => {
   console.log("Error connecting to database")
 })
 const students = ["Dinesh", "Aryan", "hrishi", "abhi", "Satish"];
 
-let roll = 100519733005;
+let roll = 100519733015;
 const insertStudents = async function () {
   const subs = await Subject.find({}, { _id: 1 });
   await Student.deleteMany({});

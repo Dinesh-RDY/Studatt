@@ -1,11 +1,9 @@
 const express = require("express");
 require("dotenv").config()
 const mongoose = require("mongoose");
-const path = require("path");
 const Subject = require("./models/subjects");
 const Student = require("./models/students");
-const { update } = require("./models/students");
-const dbUrl = process.env.dbUrl || "mongodb://localhost:27017/attendance"
+const dbUrl = "mongodb://localhost:27017/attendance"
 mongoose.connect(dbUrl).then(() => {
   console.log("connection Established");
 }).catch(() => {
@@ -28,7 +26,7 @@ app.post("/markAttendance", async (req, res) => {
   const user = await Student.findOne({ rollNumber: roll });
   const sub = await Subject.findOne({ title: subject });
   let updateDate = new Date(user.updateTime)
-  let presentDate = new Date();
+  let presentDate = new Date(Date.now());
   console.log(updateDate)
   console.log(presentDate)
   console.log(updateDate.getHours());
@@ -48,7 +46,8 @@ app.post("/markAttendance", async (req, res) => {
   }
   res.send("Marked Attendance");
 });
-const port = process.env.PORT
+const port = 3000
 app.listen(port, () => {
+  console.log(dbUrl)
   console.log("Listening on port 3000");
 });

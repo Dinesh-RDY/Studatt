@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const schema = require("../models/subjects")
 require("dotenv").config()
-const dbUrl = process.env.dbUrl || "mongodb://localhost:27017/attendance"
+const dbUrl =  "mongodb://localhost:27017/attendance"
 mongoose.connect(dbUrl).then(() => {
     console.log("connection Established");
 }).catch(() => {

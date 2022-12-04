@@ -3,3 +3,7 @@ node_modules
 __pycache__
 .vscode
 test.js
+haarcascade_frontalface_default.xml
+model1ANN.h5
+data
+env
